@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="node_modules/zone.js/dist/zone.js"></script>
+	<script src="node_modules/reflect-metadata/Reflect.js"></script>
+	<script src="node_modules/systemjs/dist/system.js"></script>
+	<script>
+		System.config({
+			defaultJSExtensions: true,
+			map:{
+				'@angular':'node_modules/@angular',
+				'rxjs': 'node_modules/rxjs'
+			},
+			packages:{
+				'@angular/core': {main: 'bundles/core.umd'},
+				'@angular/compiler': {main: 'bundles/compiler.umd'},
+				'@angular/common': {main: 'bundles/common.umd'},
+				'@angular/platform-browser': {main: 'bundles/platform-browser.umd'},
+				'@angular/platform-browser-dynamic': {main: 'bundles/platform-browser-dynamic.umd'},
+				'@angular/http': {main: 'bundles/http.umd'},
+				'@angular/forms': {main: 'bundles/forms.umd'},
+				'@angular/router': {main: 'bundles/router.umd'}
+		}
+		});
+		System.import('./dist/main');
+	</script>
+	<base href="/">
+<title>Title of the document</title>
+</head>
+
+<body>
+	<movies-app>
+	</movies-app>
+</body>
+
+</html>

@@ -22,8 +22,8 @@ import { QcmService } from './qcm.service';
 					</ul>
 				</div>
 
-				<div *ngIf="(questionCourante) && (questionCourante.question==questionCourante.questions.lenght)">
-					<p>Bravo, vous avez reponsesJustes réponses justes sur questionCourante.questions.lenght!</p>
+				<div *ngIf="qcmTermine">
+					<p>Bravo, vous avez {{reponsesJustes}} réponses justes sur {{questionCourante.questions.length}}!</p>
 				</div>
 	`
 })
@@ -67,5 +67,8 @@ export class QcmsAppComponent{
 			this.reponsesJustes++;
 		}
 		this.questionCourante.question++;
+		if(this.questionCourante.question==this.questionCourante.questions.length){
+			this.qcmTermine=true;
+		}
 	}
 }
